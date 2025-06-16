@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- Define Transport Services -->
+    <bean id="busService" class="com.Aits.TravelBookingSystem.BusService"/>
+    <bean id="trainService" class="com.Aits.TravelBookingSystem.TrainService"/>
+    <bean id="flightService" class="com.Aits.TravelBookingSystem.FlightService"/>
+
+    <!-- Define Booking Processor -->
+    <bean id="bookingService" class="com.Aits.TravelBookingSystem.BookingService">
+        <constructor-arg ref="busService"/>
+    </bean>
+
+</beans>
